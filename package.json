@@ -28,6 +28,7 @@
     "es6-promisify": "^7.0.0",
     "fs": "^0.0.1-security",
     "idb": "^7.0.0",
+    "shelljs": "^0.8.5",
     "vue": "^2.6.14",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",

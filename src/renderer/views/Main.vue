@@ -7,18 +7,12 @@
 </template>
 
 <script>
-import { spawn } from 'child_process';
-
+import utilMixin from '@/mixins/utils';
 export default {
   name: 'LandingPage',
-  methods: {
-    async createProjectDirectory(projectName) {
-      const child = await spawn('powershell.exe', [`cd projects; mkdir ${projectName}`]);
-      child.stdin.end();
-    },
-  },
-  mounted() {
-    this.createProjectDirectory('Todo');
+  mixins: [utilMixin],
+  async mounted() {
+    const res = await this.createProjectDirectory('asdas');
   },
 };
 </script>
