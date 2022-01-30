@@ -7,9 +7,6 @@
 <script>
 export default {
   name: 'BaseLayout',
-  mounted() {
-    console.log('asdasdas');
-  },
 };
 </script>
 
