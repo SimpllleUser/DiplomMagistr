@@ -4,6 +4,12 @@ import fs from 'fs';
 import constants from '../../contants';
 
 export default {
+  data() {
+    return {
+      templateProjectName: constants.TEMPLATE_PROJECT_NAME,
+      // 'template-app'
+    };
+  },
   methods: {
     async runTerminalCommand(terminalCommand) {
       const spawn = promisify(cp.exec);
@@ -15,9 +21,9 @@ export default {
       return resultCope;
     },
     async createProjectByTemplate(projectName) {
-      if (projectName === 'template-app') return console.error('project by this name not access !');
+      if (projectName === this.templateProjectName) return console.error('project by this name not access !');
       const resultCreate = await this.copyPastDirectory(
-        `${constants.PROJECTS_PATH}/template-app`,
+        `${constants.PROJECTS_PATH}/${this.templateProjectName}`,
         `${constants.PROJECTS_PATH}/template-app/${projectName}`,
       );
       return resultCreate;
